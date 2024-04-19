@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Pre-Interview Todo App for Duodeka
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple Todo application built by Simeon Dimov as a pre-interview project for Duodeka. The app serves as a demonstration of various features and functionalities built using React and Material-UI.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Global State Management
 
-### `npm start`
+- **Based on React's Context API and useReducer:** For state management so all components have access to and can modify the todo list state.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Todo Management Functions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Add Todo:** Add new todo items. Each item is assigned an ID.
+- **Edit Todo:** Todos can be edited directly in the list. Text is also editable.
+- **Solved/Not solved:** Completion status can be toggled, by striking through the completed item.
+- **Delete Todo:** Remove todo items from the list.
 
-### `npm test`
+### User Interface
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Responsive UI:** Navbar, todo component, and all content are responsive and adapt to the device screen size.
+- **Snackbar:** I use feedback mechanisms usually on all of my apps, so a snackbar pops up if a user tries to add an empty todo, a simple feature, but useful.
+- **Styling:** I have used MaterialUI, but not really extensively, if you need more showcasing, let me know. Usually, I build my own components with Vanilla CSS or Tailwind CSS, because of the bitter experience of deprecation of MUI components which results in a need of refactoring them.
 
-### `npm run build`
+### State Management
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Global State Context:** Two contexts are used — GlobalStateContext for accessing the state and GlobalDispatchContext for dispatching actions to the reducer.
+- **Reducer Function (globalReducer):** This is the logic for adding, removing, toggling, and editing todos.
+- **GlobalProvider Component:** Wraps the application in the GlobalStateContext.Provider and GlobalDispatchContext.Provider, so any child component can access and modify the global todo list state.
+- **Custom Hooks:** useGlobalState and useGlobalDispatch simplify state access and action dispatching, respectively.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application is deployed on Vercel, ensuring high availability and effortless scalability. You can visit the live application by following this link: [Visit Todo App](https://duodeka-todo.vercel.app/).
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the application locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install dependencies by running `npm install`.
+4. Start the development server with `npm start`.
+5. Open your web browser and navigate to `http://localhost:3000` to view the application.
