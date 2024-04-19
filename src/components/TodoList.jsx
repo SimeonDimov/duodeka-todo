@@ -9,6 +9,7 @@ import {
   IconButton,
   Grid,
   Paper,
+  Typography,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -63,6 +64,8 @@ export const TodoList = () => {
 
   return (
     <Container sx={{ maxWidth: "xs", p: 1 }}>
+      <Typography variant="h4">TODO App</Typography>
+
       <Grid container spacing={1}>
         <Grid item xs={36}>
           <TextField
