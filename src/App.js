@@ -12,7 +12,22 @@ function App() {
     <GlobalProvider>
       <Router>
         <Navigation />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        {/* Adjust the main content box's padding based on screen size */}
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: {
+              xs: 1,
+              sm: 2,
+              md: 5,
+              lg: 5,
+            },
+            ml: {
+              lg: 28,
+            },
+          }}
+        >
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/todos" element={<TodoPage />} />

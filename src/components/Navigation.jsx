@@ -13,33 +13,33 @@ import { useMediaQuery } from "@mui/material";
 
 export const Navigation = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
+  const drawerContent = (
     <List>
       <ListItemButton
         component={Link}
         to="/"
-        onClick={isMobile ? handleDrawerToggle : null}
+        onClick={() => mobileOpen && handleDrawerToggle()}
       >
         <ListItemText primary="Home" />
       </ListItemButton>
       <ListItemButton
         component={Link}
         to="/todos"
-        onClick={isMobile ? handleDrawerToggle : null}
+        onClick={() => mobileOpen && handleDrawerToggle()}
       >
         <ListItemText primary="TODO List" />
       </ListItemButton>
       <ListItemButton
         component={Link}
         to="/info"
-        onClick={isMobile ? handleDrawerToggle : null}
+        onClick={() => mobileOpen && handleDrawerToggle()}
       >
         <ListItemText primary="Info Page" />
       </ListItemButton>
@@ -69,7 +69,7 @@ export const Navigation = () => {
           [`& .MuiDrawer-paper`]: { width: 240, boxSizing: "border-box" },
         }}
       >
-        {drawer}
+        {drawerContent}
       </Drawer>
     </nav>
   );
